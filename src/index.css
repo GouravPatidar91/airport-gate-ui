@@ -1,0 +1,122 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 195 100% 98%;
+    --foreground: 195 100% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 195 100% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 195 100% 10%;
+
+    --primary: 195 85% 23%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 190 95% 44%;
+    --secondary-foreground: 195 100% 10%;
+
+    --muted: 195 60% 95%;
+    --muted-foreground: 195 60% 40%;
+
+    --accent: 191 56% 30%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 195 60% 90%;
+    --input: 195 60% 90%;
+    --ring: 195 85% 23%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 195 100% 6%;
+    --foreground: 195 30% 98%;
+
+    --card: 195 100% 10%;
+    --card-foreground: 195 30% 98%;
+
+    --popover: 195 100% 10%;
+    --popover-foreground: 195 30% 98%;
+
+    --primary: 195 70% 35%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 190 80% 40%;
+    --secondary-foreground: 195 30% 98%;
+
+    --muted: 195 50% 20%;
+    --muted-foreground: 195 50% 70%;
+
+    --accent: 191 56% 30%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 195 50% 20%;
+    --input: 195 50% 20%;
+    --ring: 195 85% 40%;
+    
+    --sidebar-background: 195 100% 10%;
+    --sidebar-foreground: 195 30% 98%;
+    --sidebar-primary: 195 70% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 50% 20%;
+    --sidebar-accent-foreground: 195 30% 98%;
+    --sidebar-border: 195 50% 20%;
+    --sidebar-ring: 190 80% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gate {
+    @apply relative flex items-center justify-center w-12 h-12 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer;
+  }
+  
+  .gate-available {
+    @apply bg-muted text-muted-foreground hover:bg-secondary/20;
+  }
+  
+  .gate-selected {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .gate-occupied {
+    @apply bg-destructive/20 text-destructive-foreground/80;
+  }
+
+  .map-pan {
+    cursor: grab;
+  }
+  
+  .map-pan:active {
+    cursor: grabbing;
+  }
+}
